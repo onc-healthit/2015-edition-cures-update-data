@@ -1,2 +1,2 @@
 # Proposed-Rule-Certification-Data
-Repository to add proposed data for testing for the Proposed Rule for different testing tools.
+Repository for test data supporting new proposed critera.
