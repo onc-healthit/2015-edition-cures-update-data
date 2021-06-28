@@ -1363,6 +1363,74 @@
 					<text>No information</text>
 				</section>
 			</component>
+			
+			<!-- Notes Section for History and Physical Note -->
+			<component>
+            <section>
+                <templateId root="2.16.840.1.113883.10.20.22.2.65" extension="2016-11-01"/>
+                <id root="15C1B550-00D6-11E6-B041-0050568B0001"/>
+                <code code="34117-2" displayName="History and Physical Note"
+                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                <title> Notes section</title>
+                <text>
+                    <table>
+                        <colgroup>
+                            <col width="75%"/>
+                            <col width="10%"/>
+                            <col width="15%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Summary</th>
+                                <th>Written by:</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td ID="hpnote_1">Dr Albert Davis examined Mr Jeremy Bates and found him to be healthy but advised him to cut down on smoking.</td>
+                                <td>Dr Albert Davis</td>
+                                <td>07/22/2015</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </text>
+                <!-- Note Activity entry -->
+                <entry>
+                    <act classCode="ACT" moodCode="EVN">
+                        <templateId root="2.16.840.1.113883.10.20.22.4.202" extension="2016-11-01"/>
+                        <code code="34109-9" displayName="Note"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                            <translation code="34117-2" displayName="History and Physical Note"
+                                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></translation>
+                        </code>
+                        <text>
+                            <reference value="#hpnote_1"></reference>
+                        </text>
+                        <statusCode code="completed"/>
+                        <effectiveTime value="20150722"></effectiveTime>
+                        <author>
+                            <templateId root="2.16.840.1.113883.10.20.22.4.119" />
+		        								<time value="201507221100-0500" />
+		        								<assignedAuthor>
+		            								<id extension="111111" root="2.16.840.1.113883.4.6"/>
+		            								<assignedPerson>
+											            <name>
+											            	<prefix>Dr</prefix>
+											                <given>Albert</given>
+											                <family>Davis</family>
+											            </name>
+		        									</assignedPerson>
+													<representedOrganization>
+											            <id root="2.16.840.1.113883.19.5" />
+											            <name>Neighborhood Physicians Practice</name>
+											        </representedOrganization>
+		        								</assignedAuthor>
+                        </author>
+                    </act>
+                </entry>
+            </section>
+        </component>
 		
 		</structuredBody>
 	</component>

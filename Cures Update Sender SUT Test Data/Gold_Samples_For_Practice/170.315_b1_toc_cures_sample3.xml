@@ -2771,6 +2771,146 @@
                 </entry>
             </section>
         </component>
+        
+        <component>
+            <section>
+                <templateId root="2.16.840.1.113883.10.20.22.2.65" extension="2016-11-01"/>
+                <id root="15C1B550-00D6-11E6-B041-0050568B0001"/>
+                <code code="11488-4" displayName="Consultation Note"
+                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                <title> Notes section</title>
+                <text>
+                    <table>
+                        <colgroup>
+                            <col width="75%"/>
+                            <col width="10%"/>
+                            <col width="15%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Summary</th>
+                                <th>Written by:</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td ID="ConsultationNote_1">TDr Albert Davis diagnosed Ms Happy Kid to be suffering from Fever and suspected Pneumonia and recommended admission to the Community Health Hospitals</td>
+                                <td>Dr Albert Davis</td>
+                                <td>06/22/2020</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </text>
+                <!-- Note Activity entry -->
+                <entry>
+                    <act classCode="ACT" moodCode="EVN">
+                        <templateId root="2.16.840.1.113883.10.20.22.4.202" extension="2016-11-01"/>
+                        <code code="34109-9" displayName="Note"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                            <translation code="11488-4" displayName="Consultation Note"
+                                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></translation>
+                        </code>
+                        <text>
+                            <reference value="#ConsultationNote_1"></reference>
+                        </text>
+                        <statusCode code="completed"/>
+                        <effectiveTime value="20200622"></effectiveTime>
+                        <author>
+                            <templateId root="2.16.840.1.113883.10.20.22.4.119" />
+		        								<time value="202006221100-0500" />
+		        								<assignedAuthor>
+		            								<id extension="111111" root="2.16.840.1.113883.4.6"/>
+		            								<assignedPerson>
+											            <name>
+											            	<prefix>Dr</prefix>
+											                <given>Albert</given>
+											                <family>Davis</family>
+											            </name>
+		        									</assignedPerson>
+													<representedOrganization>
+											            <id root="2.16.840.1.113883.19.5" />
+											            <name>Neighborhood Physicians Practice</name>
+											        </representedOrganization>
+		        								</assignedAuthor>
+                        </author>
+                    </act>
+                </entry>
+            </section>
+        </component>
+
+        <!-- Care Team Section -->
+
+        <component>
+            <section>
+                <templateId root="2.16.840.1.113883.10.20.22.2.500" extension="2019-07-01"/>
+                <code code="85847-2" displayName="Care Team Section"
+                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                <title> Care Team section</title>
+                <text>
+                    <table>
+                        <colgroup>
+                            <col width="75%"/>
+                            <col width="10%"/>
+                            <col width="15%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Performer Name</th>
+                                <th>Performer Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td ID="ctm_1">Dr Albert Davis </td>
+                                <td>PCP</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </text>
+                <!-- Care Team Organizer entry -->
+                <entry>
+                    <organizer classCode="CLUSTER" moodCode="EVN">
+                        <templateId root="2.16.840.1.113883.10.20.22.4.500" extension="2019-07-01"/>
+                        <id root="15C1B550-00D6-11E6-B041-0050568B0101"/>
+                        <code code="86744-0" displayName="Care Team"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                            <originalText><reference value="#ctm_1"></reference></originalText>
+                        </code>
+                        <statusCode code="active"/>
+                        <effectiveTime>
+                        			<low value="20200601"/>
+                        </effectiveTime>
+                        <component>
+                        	<act classCode="PCPR" moodCode="EVN">
+                        		<templateId root="2.16.840.1.113883.10.20.22.4.500.1" extension="2019-07-01"/>
+                        		<id root="15C1B550-00D6-11E6-B041-0050568B1101"/>
+                        		<code code="85847-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Care Team Information"/>
+                        		<statusCode code="active"/>
+                        		<effectiveTime>
+                        			<low value="20200601"/>
+                        		</effectiveTime>
+                        		<performer typeCode="PRF">
+                        			<functionCode xmlns="urn:hl7-org:sdtc" code="PCP" displayName="primary care physician"
+										codeSystem="2.16.840.1.113883.5.88" codeSystemName="ParticipationFunction">	
+									</functionCode>
+									<assignedEntity>
+											<id root="B00B14E8-CDE4-48EA-8A09-01BC4945122A" extension="1"/>
+											<assignedPerson>
+												<name>
+													<given>Albert</given>
+													<family>Davis</family>
+												</name>
+											</assignedPerson>
+									</assignedEntity>	
+
+                        		</performer>
+                        	</act>
+                        </component>
+                    </organizer>
+                </entry>
+            </section>
+        </component>
 		
 		</structuredBody>
 	</component>

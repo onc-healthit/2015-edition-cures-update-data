@@ -1220,6 +1220,27 @@
 					<code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PROCEDURES"/>
 					<title>PROCEDURES</title>
 					<text>
+					<table>
+                        <colgroup>
+                            <col width="75%"/>
+                            <col width="10%"/>
+                            <col width="15%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Summary</th>
+                                <th>Written by:</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td ID="ProcedureNote_1">Dr Albert Davis examined Ms Alice Newman and found that the pacemaker is operating properly and the breathlessness is due to high fever and anxiety.</td>
+                                <td>Dr Albert Davis</td>
+                                <td>06/22/2015</td>
+                            </tr>
+                        </tbody>
+                    </table>
 						<table border="1" width="100%">
 							<thead>
 								<tr>
@@ -1347,6 +1368,40 @@
 					<!-- removed Procedure activity observation (V2) as not required as per test data -db -->					
 					<!-- removed Procedure activity act (V2) as not required as per test data -db -->
 					<!-- TODO: This may not be the most accurate way to record a UDI -db -->
+					
+					<entry>
+                    <act classCode="ACT" moodCode="EVN">
+                        <templateId root="2.16.840.1.113883.10.20.22.4.202" extension="2016-11-01"/>
+                        <code code="34109-9" displayName="Note"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                            <translation code="28570-0" displayName="Procedure Report Narrative Note"
+                                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></translation>
+                        </code>
+                        <text>
+                            <reference value="#ProcedureNote_1"></reference>
+                        </text>
+                        <statusCode code="completed"/>
+                        <effectiveTime value="20200615"></effectiveTime>
+                        <author>
+                            <templateId root="2.16.840.1.113883.10.20.22.4.119" />
+		        								<time value="202006151100-0500" />
+		        								<assignedAuthor>
+		            								<id extension="111111" root="2.16.840.1.113883.4.6"/>
+		            								<assignedPerson>
+											            <name>
+											            	<prefix>Dr</prefix>
+											                <given>Albert</given>
+											                <family>Davis</family>
+											            </name>
+		        									</assignedPerson>
+													<representedOrganization>
+											            <id root="2.16.840.1.113883.19.5" />
+											            <name>Neighborhood Physicians Practice</name>
+											        </representedOrganization>
+		        								</assignedAuthor>
+                        </author>
+                    </act>
+                </entry>
 					
 				</section>
 			</component>
@@ -1661,6 +1716,28 @@
 					<code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RESULTS"/>
 					<title>RESULTS</title>
 					<text>
+					<table>
+                        <colgroup>
+                            <col width="75%"/>
+                            <col width="10%"/>
+                            <col width="15%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Summary</th>
+                                <th>Written by:</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td ID="LabNote_1">Ms Alice Newman was tested for the Urinanalysis macro panel and the results have been found to be normal.</td>
+                                <td>Dr Albert Davis</td>
+                                <td>06/22/2020</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
 						<table>
 							<thead>
 								<tr>
@@ -1725,6 +1802,39 @@
 							</tbody>
 						</table>
 					</text>
+					<entry>
+                    <act classCode="ACT" moodCode="EVN">
+                        <templateId root="2.16.840.1.113883.10.20.22.4.202" extension="2016-11-01"/>
+                        <code code="34109-9" displayName="Note"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                            <translation code="11502-2" displayName="Laboratory Report Narrative Note"
+                                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></translation>
+                        </code>
+                        <text>
+                            <reference value="#LabNote_1"></reference>
+                        </text>
+                        <statusCode code="completed"/>
+                        <effectiveTime value="20200615"></effectiveTime>
+                        <author>
+                            <templateId root="2.16.840.1.113883.10.20.22.4.119" />
+		        								<time value="202006151100-0500" />
+		        								<assignedAuthor>
+		            								<id extension="111111" root="2.16.840.1.113883.4.6"/>
+		            								<assignedPerson>
+											            <name>
+											            	<prefix>Dr</prefix>
+											                <given>Albert</given>
+											                <family>Davis</family>
+											            </name>
+		        									</assignedPerson>
+													<representedOrganization>
+											            <id root="2.16.840.1.113883.19.5" />
+											            <name>Neighborhood Physicians Practice</name>
+											        </representedOrganization>
+		        								</assignedAuthor>
+                        </author>
+                    </act>
+                </entry>
 					<entry typeCode="DRIV">
 						<organizer classCode="BATTERY" moodCode="EVN">
 							<!-- ** Result organizer (V3) ** -->
@@ -2521,7 +2631,72 @@
 				</section>
 			</component>			
 
-			<!-- removed Reason for Referral -db -->		
+<component>
+            <section>
+                <templateId root="2.16.840.1.113883.10.20.22.2.65" extension="2016-11-01"/>
+                <id root="15C1B550-00D6-11E6-B041-0050568B0001"/>
+                <code code="11506-3" displayName="Progress Note"
+                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                <title> Notes section</title>
+                <text>
+                    <table>
+                        <colgroup>
+                            <col width="75%"/>
+                            <col width="10%"/>
+                            <col width="15%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Summary</th>
+                                <th>Written by:</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td ID="ProgressNote_1">Ms Alice Newman seems to be developing high fever and hence we recommend her to get admitted to a nearby hospital using the provided referral.</td>
+                                <td>Dr Albert Davis</td>
+                                <td>06/22/2015</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </text>
+                <!-- Note Activity entry -->
+                <entry>
+                    <act classCode="ACT" moodCode="EVN">
+                        <templateId root="2.16.840.1.113883.10.20.22.4.202" extension="2016-11-01"/>
+                        <code code="34109-9" displayName="Note"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                            <translation code="11506-3" displayName="Progress Note"
+                                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></translation>
+                        </code>
+                        <text>
+                            <reference value="#ProgressNote_1"></reference>
+                        </text>
+                        <statusCode code="completed"/>
+                        <effectiveTime value="20150622"></effectiveTime>
+                        <author>
+                            <templateId root="2.16.840.1.113883.10.20.22.4.119" />
+		        								<time value="201506221100-0500" />
+		        								<assignedAuthor>
+		            								<id extension="111111" root="2.16.840.1.113883.4.6"/>
+		            								<assignedPerson>
+											            <name>
+											            	<prefix>Dr</prefix>
+											                <given>Albert</given>
+											                <family>Davis</family>
+											            </name>
+		        									</assignedPerson>
+													<representedOrganization>
+											            <id root="2.16.840.1.113883.19.5" />
+											            <name>Neighborhood Physicians Practice</name>
+											        </representedOrganization>
+		        								</assignedAuthor>
+                        </author>
+                    </act>
+                </entry>
+            </section>
+        </component>	
 		
 		</structuredBody>
 	</component>
