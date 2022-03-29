@@ -450,6 +450,18 @@
 									</td>
 									<td>Active</td>
 								</tr>
+								<tr>
+									<td>
+										<content ID="product3">Product containing benzodiazepine</content>
+									</td>
+									<td>
+										<content ID="reaction3">Allergic Headeache</content>
+									</td>
+									<td>
+										<content ID="severity3">Mild</content>
+									</td>
+									<td>Active</td>
+								</tr>
 							</tbody>
 						</table>
 					</text>
@@ -648,6 +660,111 @@
 													<statusCode code="completed"/>
 													<value xsi:type="CD" code="6736007"
 														displayName="Moderate"
+														codeSystem="2.16.840.1.113883.6.96"
+														codeSystemName="SNOMED-CT"/>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- ** Allergy Concern Act (V3) ** -->
+							<templateId root="2.16.840.1.113883.10.20.22.4.30" extension="2015-08-01"/>
+							<!--Critical Change-->
+							<templateId root="2.16.840.1.113883.10.20.22.4.30"/>
+							<id root="36e3e930-7b14-11db-9fe1-0800200c9a66"/>
+							<code code="CONC" codeSystem="2.16.840.1.113883.5.6"/>
+							<!-- The statusCode represents the need to continue tracking the allergy -->
+							<!-- This is of ongoing concern to the provider -->
+							<statusCode code="active"/>
+							<effectiveTime>
+								<!-- The low value represents when the allergy was first recorded in the patient's chart -->
+								<low value="20191201"/>
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Allergy observation (V2) ** -->
+									<templateId root="2.16.840.1.113883.10.20.22.4.7" extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.7"/>
+									<id root="4adc1020-7b14-11db-9fe1-0800200c9a66"/>
+									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+									<!-- Observation statusCode represents the status of the act of observing -->
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<!-- The low value reflects the date of onset of the allergy -->
+										<low value="20191201"/>
+										<!-- The high value reflects when the allergy was known to be resolved (and will generally be absent) -->
+									</effectiveTime>
+									<value xsi:type="CD" code="419511003"
+										displayName="Propensity to adverse reaction to drug"
+										codeSystem="2.16.840.1.113883.6.96"
+										codeSystemName="SNOMED CT">
+									</value>
+									<author>
+										<templateId root="2.16.840.1.113883.10.20.22.4.119" />
+        								<time value="202006221100-0500" />
+        								<assignedAuthor>
+            								<id extension="111111" root="2.16.840.1.113883.4.6"/>
+            								<assignedPerson>
+									            <name>
+									            	<prefix>Dr</prefix>
+									                <given>Henry</given>
+									                <family>Seven</family>
+									            </name>
+        									</assignedPerson>
+											<representedOrganization>
+									            <id root="2.16.840.1.113883.19.5" />
+									            <name>Community Health Hospitals</name>
+									        </representedOrganization>
+        								</assignedAuthor>
+    								</author>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="16047007"
+												displayName="Product containing benzodiazepine"
+												codeSystem="2.16.840.1.113883.6.96"
+												codeSystemName="SNOMED CT">
+												<originalText>
+												<reference value="#product3"/>
+												</originalText>
+												</code>
+											</playingEntity>
+										</participantRole>
+									</participant>								
+									<entryRelationship typeCode="MFST" inversionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!-- ** Reaction Observation (V2) ** -->
+											<templateId root="2.16.840.1.113883.10.20.22.4.9" extension="2014-06-09"/>
+											<templateId root="2.16.840.1.113883.10.20.22.4.9"/>
+											<id root="4adc1020-7b14-11db-9fe1-0800200c9a67"/>
+											<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+											<text>
+												<reference value="#reaction3"/>
+											</text>
+											<statusCode code="completed"/>
+											
+											<value xsi:type="CD" code="4448006"
+												codeSystem="2.16.840.1.113883.6.96"
+												displayName="Allergic Headache"/>
+											<entryRelationship typeCode="SUBJ" inversionInd="true">
+												<observation classCode="OBS" moodCode="EVN">
+													<!-- ** Severity Observation  (V2)** -->
+													<!-- When the Severity Observation is associated directly with an allergy it characterizes the allergy. 
+								When the Severity Observation is associated with a Reaction Observation it characterizes a Reaction. -->
+													<templateId root="2.16.840.1.113883.10.20.22.4.8" extension="2014-06-09"/>
+													<templateId root="2.16.840.1.113883.10.20.22.4.8"/>
+													<code code="SEV" displayName="Severity Observation" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+													<text>
+														<reference value="#severity3"/>
+													</text>
+													<statusCode code="completed"/>
+													<value xsi:type="CD" code="255604002"
+														displayName="Mild"
 														codeSystem="2.16.840.1.113883.6.96"
 														codeSystemName="SNOMED-CT"/>
 												</observation>
