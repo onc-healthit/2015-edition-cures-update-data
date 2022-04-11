@@ -60,6 +60,10 @@
 			<patient>
 				<name use="L">
 					<given>Lauren</given>
+					<given>Sam</given>
+					<family>Walker</family>
+				</name>
+				<name use="L">
 					<given qualifier="BR">Laura</given>
 					<given>Sam</given>
 					<family>Walker</family>

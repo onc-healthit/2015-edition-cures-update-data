@@ -58,6 +58,10 @@
 			<patient>
 				<name use="L">
 					<given>Cecilia</given>
+					<given>Franklin</given>
+					<family>Cummings</family>
+				</name>
+				<name use="L">
 					<given qualifier="BR">Cecil</given>
 					<given>Franklin</given>
 					<family>Cummings</family>
